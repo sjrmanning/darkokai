@@ -58,13 +58,12 @@ Also affects 'linum-mode' background."
        (darkokai-yellow           "#E6DB74")
        (darkokai-orange           "#ffac4a")
        ;; (darkokai-orange           "#FD971F")
-       ;; (darkokai-red              "#ff2775")
        (darkokai-red              "#ff0066")
        (darkokai-magenta          "#ff8eff")
        (darkokai-violet           "#ab7eff")
        (darkokai-blue             "#06d8ff")
        (darkokai-cyan             "#53f2dc")
-       (darkokai-green            "#8ee728")
+       (darkokai-green            "#63de5d")
        (darkokai-gray             "#35393b")
        ;; Darker and lighter accented colors
        (darkokai-yellow-d         "#BEB244")
@@ -87,6 +86,8 @@ Also affects 'linum-mode' background."
        (darkokai-gray-d           "#35393b")
        (darkokai-gray-dd          "#2e3132")
        (darkokai-gray-l           "#7B7962")
+       (darkokai-green-plain      "#2AD043")
+       (darkokai-red-plain        "#FF6159")
        ;; Adaptive colors
        (darkokai-fg               "#f8fbfc")
        (darkokai-bg               "#242728")
@@ -406,7 +407,7 @@ Also affects 'linum-mode' background."
       (,terminal-class (:foreground ,terminal-darkokai-yellow ))))
 
    `(error
-     ((,class (:foreground ,darkokai-red))
+     ((,class (:foreground ,darkokai-red-plain))
       (,terminal-class (:foreground ,terminal-darkokai-red))))
 
    `(eval-sexp-fu-flash
@@ -1468,7 +1469,7 @@ Also affects 'linum-mode' background."
 
    ;; diff
    `(diff-added
-     ((,class (:foreground ,darkokai-green
+     ((,class (:foreground ,darkokai-green-plain
                            :background ,darkokai-bg))
       (,terminal-class (:foreground ,terminal-darkokai-green
                                     :background ,terminal-darkokai-bg))))
@@ -1480,7 +1481,7 @@ Also affects 'linum-mode' background."
                                     :background ,terminal-darkokai-bg))))
 
    `(diff-removed
-     ((,class (:foreground ,darkokai-red
+     ((,class (:foreground ,darkokai-red-plain
                            :background ,darkokai-bg))
       (,terminal-class (:foreground ,terminal-darkokai-red
                                     :background ,terminal-darkokai-bg))))
@@ -1499,7 +1500,7 @@ Also affects 'linum-mode' background."
 
    `(diff-refine-added
      ((,class (:foreground ,darkokai-bg
-                           :background ,darkokai-green))
+                           :background ,darkokai-green-plain))
       (,terminal-class (:foreground ,terminal-darkokai-bg
                                     :background ,terminal-darkokai-green))))
 
@@ -1511,7 +1512,7 @@ Also affects 'linum-mode' background."
 
    `(diff-refine-removed
      ((,class (:foreground ,darkokai-bg
-                           :background ,darkokai-red))
+                           :background ,darkokai-red-plain))
       (,terminal-class (:foreground ,terminal-darkokai-bg
                                     :background ,terminal-darkokai-red))))
 
@@ -3057,25 +3058,25 @@ Also affects 'linum-mode' background."
    ;; https://github.com/magit/magit/search?utf8=%E2%9C%93&q=face
    ;;
    `(magit-diff-added
-     ((,class (:foreground ,darkokai-green
+     ((,class (:foreground ,darkokai-green-plain
                            :background ,darkokai-bg))
       (,terminal-class (:foreground ,terminal-darkokai-green
                                     :background ,terminal-darkokai-bg))))
 
    `(magit-diff-added-highlight
-     ((,class (:foreground ,darkokai-green
+     ((,class (:foreground ,darkokai-green-plain
                            :background ,darkokai-highlight-line))
       (,terminal-class (:foreground ,terminal-darkokai-green
                                     :background ,terminal-darkokai-highlight-line))))
 
    `(magit-diff-removed
-     ((,class (:foreground ,darkokai-red
+     ((,class (:foreground ,darkokai-red-plain
                            :background ,darkokai-bg))
       (,terminal-class (:foreground ,terminal-darkokai-red
                                     :background ,terminal-darkokai-bg))))
 
    `(magit-diff-removed-highlight
-     ((,class (:foreground ,darkokai-red
+     ((,class (:foreground ,darkokai-red-plain
                            :background ,darkokai-highlight-line))
       (,terminal-class (:foreground ,terminal-darkokai-red
                                     :background ,terminal-darkokai-highlight-line))))
