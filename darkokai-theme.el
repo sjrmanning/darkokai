@@ -1,4 +1,4 @@
-;;; darkokai-theme.el --- Summary.
+;;; darkokai-theme.el --- A darker variant on Monokai.
 ;;; Commentary:
 ;;; Code:
 
