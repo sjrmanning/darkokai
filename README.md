@@ -9,8 +9,6 @@ A dark variant of [oneKelvinSmith’s Monokai port](https://github.com/oneKelvin
 
 ![darkokai-android-preview](/../screenshots/android-example.png)
 
-![darkokai-android-preview](/../screenshots/magit-example.png)
-
 ## Installation
 
 Hopefully it’ll be up on [MELPA](https://melpa.org) soon, but in the meantime you can place `darkokai-theme.el` in your `custom-theme-load-path` and load the theme with `(load-theme 'darkokai t)`.
