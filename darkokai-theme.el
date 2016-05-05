@@ -84,7 +84,7 @@ Also affects 'linum-mode' background."
        (darkokai-green-l          "#BBEF53")
        (darkokai-gray-ld          "#383c3d")
        (darkokai-gray-d           "#35393b")
-       (darkokai-gray-dd          "#2e3132")
+       (darkokai-gray-dd          "#2B2F31")
        (darkokai-gray-l           "#7B7962")
        (darkokai-green-plain      "#2AD043")
        (darkokai-red-plain        "#FF6159")
@@ -94,7 +94,7 @@ Also affects 'linum-mode' background."
        (darkokai-highlight-line   "#424748")
        (darkokai-highlight        "#5D6365")
        (darkokai-emph             "#ffffff")
-       (darkokai-comments         "#818485")
+       (darkokai-comments         "#6A6D70")
        ;; Adaptive higher/lower contrast accented colors
        (darkokai-fg-hc            "#141414")
        (darkokai-fg-lc            "#171A0B")
@@ -119,7 +119,7 @@ Also affects 'linum-mode' background."
        (s-variable-pitch         (if darkokai-use-variable-pitch
                                      'variable-pitch 'default))
        (s-fringe-bg              (if darkokai-distinct-fringe-background
-                                     darkokai-gray-ld darkokai-bg))
+                                     darkokai-gray-dd darkokai-bg))
        (s-mode-line-fg           (if darkokai-high-contrast-mode-line
                                      darkokai-bg darkokai-fg))
        (s-mode-line-bg           (if darkokai-high-contrast-mode-line
@@ -3054,7 +3054,7 @@ Also affects 'linum-mode' background."
 
    ;; linum-mode
    `(linum
-     ((,class (:foreground ,darkokai-comments
+     ((,class (:foreground ,darkokai-highlight
                            :background ,s-fringe-bg))
       (,terminal-class (:foreground ,terminal-darkokai-comments
                                     :background ,terminal-s-fringe-bg))))
