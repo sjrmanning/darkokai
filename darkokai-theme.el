@@ -3119,6 +3119,42 @@ Also affects 'linum-mode' background."
       (,terminal-class (:foreground ,terminal-darkokai-orange
                                     :weight bold))))
 
+   `(magit-cherry-equivalent
+     ((,class (:foreground ,darkokai-magenta))
+      (,terminal-class (:foreground ,terminal-darkokai-magenta))))
+
+   `(magit-cherry-unmatched
+     ((,class (:foreground ,darkokai-cyan))
+      (,terminal-class (:foreground ,terminal-darkokai-cyan))))
+
+   `(magit-head
+     ((,class (:foreground ,darkokai-violet))
+      (,terminal-class (:foreground ,terminal-darkokai-violet))))
+
+   `(magit-branch-local
+     ((,class (:foreground ,darkokai-violet))
+      (,terminal-class (:foreground ,terminal-darkokai-violet))))
+
+   `(magit-branch-remote
+     ((,class (:foreground ,darkokai-yellow))
+      (,terminal-class (:foreground ,terminal-darkokai-yellow))))
+
+   `(magit-section-heading
+     ((,class (:foreground ,darkokai-yellow :weight bold))
+      (,terminal-class (:foreground ,terminal-darkokai-yellow :weight bold))))
+
+   `(magit-process-ok
+     ((,class (:foreground ,darkokai-green-plain
+                           :weight bold))
+      (,terminal-class (:foreground ,terminal-darkokai-green
+                                    :weight bold))))
+
+   `(magit-process-ng
+     ((,class (:foreground ,darkokai-red-plain
+                           :weight bold))
+      (,terminal-class (:foreground ,terminal-darkokai-red
+                                    :weight bold))))
+
    `(magit-item-highlight
      ((,class (:background ,darkokai-highlight-line
                            :weight unspecified))
