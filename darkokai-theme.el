@@ -348,8 +348,8 @@ Also affects 'linum-mode' background."
      ((,class (:foreground ,darkokai-cyan-l
                            :background ,darkokai-cyan-d
                            :weight bold))
-      (,terminal-class (:background ,terminal-darkokai-green
-                                    :foreground ,terminal-darkokai-bg
+      (,terminal-class (:background ,terminal-darkokai-cyan-l
+                                    :foreground ,terminal-darkokai-cyan-d
                                     :weight bold))))
 
    `(cursor
@@ -411,10 +411,10 @@ Also affects 'linum-mode' background."
       (,terminal-class (:foreground ,terminal-darkokai-red))))
 
    `(eval-sexp-fu-flash
-     ((,class (:foreground ,darkokai-bg
-                           :background ,darkokai-green))
-      (,terminal-class (:foreground ,terminal-darkokai-bg
-                                    :background ,terminal-darkokai-green))))
+     ((,class (:foreground ,darkokai-cyan-l
+                           :background ,darkokai-cyan-d))
+      (,terminal-class (:foreground ,terminal-darkokai-cyan-l
+                                    :background ,terminal-darkokai-cyan-d))))
 
    `(eval-sexp-fu-flash-error
      ((,class (:foreground ,darkokai-bg
@@ -438,7 +438,7 @@ Also affects 'linum-mode' background."
 
    `(minibuffer-prompt
      ((,class (:foreground ,darkokai-violet-l))
-      (,terminal-class (:foreground ,terminal-darkokai-blue))))
+      (,terminal-class (:foreground ,terminal-darkokai-violet))))
 
    ;; menus and mode line
    `(mode-line
@@ -719,8 +719,8 @@ Also affects 'linum-mode' background."
    `(isearch
      ((,class (:foreground ,darkokai-cyan-l
                         :background ,darkokai-cyan-d))
-      (,terminal-class (:inherit region
-                                 :background ,terminal-darkokai-green))))
+      (,terminal-class (:foreground ,terminal-darkokai-cyan-l
+                                 :background ,terminal-darkokai-cyan-d))))
 
    `(isearch-fail
      ((,class (:inherit isearch
@@ -1227,8 +1227,8 @@ Also affects 'linum-mode' background."
    `(company-tooltip-selection
      ((,class (:background ,darkokai-cyan-d
                            :foreground ,darkokai-cyan-l))
-      (,terminal-class (:background ,terminal-darkokai-blue
-                                    :foreground ,terminal-darkokai-bg))))
+      (,terminal-class (:background ,terminal-darkokai-cyan-d
+                                    :foreground ,terminal-darkokai-cyan-l))))
 
    `(company-tooltip-mouse
      ((,class (:background ,darkokai-blue
@@ -1239,14 +1239,15 @@ Also affects 'linum-mode' background."
    `(company-tooltip-common
      ((,class (:foreground ,darkokai-violet
                            :underline t))
-      (,terminal-class (:foreground ,terminal-darkokai-blue
+      (,terminal-class (:foreground ,terminal-darkokai-violet
                                     :underline t))))
 
    `(company-tooltip-common-selection
      ((,class (:foreground ,darkokai-fg
                            :background ,darkokai-cyan-d
                            :underline t))
-      (,terminal-class (:foreground ,terminal-darkokai-bg
+      (,terminal-class (:foreground ,terminal-darkokai-fg
+                                    :background ,terminal-darkokai-cyan-d
                                     :underline t))))
 
    `(company-preview
@@ -1270,10 +1271,8 @@ Also affects 'linum-mode' background."
       (,terminal-class (:background ,terminal-darkokai-comments))))
 
    `(company-tooltip-annotation
-     ((,class (;; :background ,darkokai-highlight-line
-                           :foreground ,darkokai-orange))
-      (,terminal-class (:background ,terminal-darkokai-highlight-line
-                                    :foreground ,terminal-darkokai-green))))
+     ((,class (:foreground ,darkokai-orange))
+      (,terminal-class (:foreground ,terminal-darkokai-orange))))
 
    `(company-template-field
      ((,class (:background ,darkokai-highlight-line
@@ -1981,9 +1980,9 @@ Also affects 'linum-mode' background."
      ((,class (:foreground ,darkokai-cyan
                            :weight normal
                            :underline t))
-      (,terminal-class (:foreground ,terminal-darkokai-blue
+      (,terminal-class (:foreground ,terminal-darkokai-cyan
                                     :weight normal
-                                    :underline nil))))
+                                    :underline t))))
 
    ;; flymake
    `(flymake-errline
@@ -3215,11 +3214,11 @@ Also affects 'linum-mode' background."
                                     :weight bold))))
 
    `(monky-diff-add
-     ((,class (:foreground ,darkokai-green))
+     ((,class (:foreground ,darkokai-green-plain))
       (,terminal-class (:foreground ,terminal-darkokai-green))))
 
    `(monky-diff-del
-     ((,class (:foreground ,darkokai-red))
+     ((,class (:foreground ,darkokai-red-plain))
       (,terminal-class (:foreground ,terminal-darkokai-red))))
 
    ;; markdown-mode
@@ -4280,7 +4279,9 @@ Also affects 'linum-mode' background."
    ;; perspective
    `(persp-selected-face
      ((,class (:foreground ,darkokai-violet
-                           :weight bold))))
+                           :weight bold))
+      (,terminal-class (:foreground ,terminal-darkokai-violet
+                                    :weight bold))))
 
    ;; pretty-mode
    `(pretty-mode-symbol-face
@@ -4587,12 +4588,12 @@ Also affects 'linum-mode' background."
 
    ;; show-paren
    `(show-paren-match
-     ((,class (:foreground ,darkokai-green
-                           :background ,darkokai-bg
+     ((,class (:foreground ,darkokai-cyan-d
+                           :background ,darkokai-cyan-l
                            :weight normal
                            :inverse-video t))
-      (,terminal-class (:foreground ,terminal-darkokai-green
-                                    :background ,terminal-darkokai-bg
+      (,terminal-class (:foreground ,terminal-darkokai-cyan-d
+                                    :background ,terminal-darkokai-cyan-l
                                     :weight normal
                                     :inverse-video t))))
 
