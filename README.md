@@ -9,6 +9,8 @@ A dark variant of [oneKelvinSmith’s Monokai port](https://github.com/oneKelvin
 
 ![darkokai-android-preview](/../screenshots/android-example.png)
 
+![darkokai-android-preview](/../screenshots/magit-example.png)
+
 ## Installation
 
 Hopefully it’ll be up on [MELPA](https://melpa.org) soon, but in the meantime you can place `darkokai-theme.el` in your `custom-theme-load-path` and load the theme with `(load-theme 'darkokai t)`.
@@ -18,7 +20,7 @@ Hopefully it’ll be up on [MELPA](https://melpa.org) soon, but in the meantime 
 Terminal support is there, but some of the base terminal colours still need to be updated to match the GUI colours. If the colours look particularly bad in terminal, make sure you’re using a 256 color term by adding the following to your `.zshrc` or `.bashrc`:
 
 ```bash
-export TERM=xterm-256color`
+export TERM=xterm-256color
 ```
 
 ## Additions and suggestions
