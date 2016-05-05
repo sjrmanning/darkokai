@@ -683,6 +683,15 @@ Also affects 'linum-mode' background."
      ((,class (:inherit shadow))
       (,terminal-class (:inherit shadow))))
 
+   ;; elixir
+   `(elixir-atom-face
+     ((,class (:foreground ,darkokai-violet))
+      (,terminal-class (:foreground ,terminal-darkokai-violet))))
+
+   `(elixir-attribute-face
+     ((,class (:foreground ,darkokai-violet-l))
+      (,terminal-class (:foreground ,terminal-darkokai-violet-l))))
+
    ;; grep
    `(grep-context-face
      ((,class (:foreground ,darkokai-fg))
@@ -742,6 +751,24 @@ Also affects 'linum-mode' background."
                                     :background ,terminal-darkokai-bg
                                     :inverse-video nil
                                     :weight bold))))
+
+   ;; alchemist
+   `(alchemist-test--failed-face
+     ((,class (:foreground ,darkokai-red-hc
+                           :background ,darkokai-red-lc
+                           :weight bold))
+      (,terminal-class (:foreground ,terminal-darkokai-red-hc
+                                    :background ,terminal-darkokai-red-lc
+                                    :weight bold))))
+
+   `(alchemist-test--success-face
+     ((,class (:foreground ,darkokai-fg
+                           :background ,darkokai-green-plain
+                           :weight bold))
+      (,terminal-class (:foreground ,terminal-darkokai-fg
+                                    :background ,terminal-darkokai-green-l
+                                    :weight bold))))
+
 
    ;; auctex
    `(font-latex-bold-face
