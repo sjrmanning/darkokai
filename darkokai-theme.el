@@ -1012,6 +1012,12 @@ Also affects 'linum-mode' background."
       (,terminal-class (:foreground ,terminal-darkokai-violet
                                     :weight bold))))
 
+   `(anzu-replace-to
+     ((,class (:foreground ,darkokai-magenta-l
+                           :background ,darkokai-violet-d))
+      (,terminal-class (:foreground ,terminal-darkokai-magenta-l
+                                    :background ,terminal-darkokai-violet-d))))
+
    ;; bm
    `(bm-face
      ((,class (:background ,darkokai-yellow-lc
