@@ -4025,12 +4025,12 @@ Also affects 'linum-mode' background."
                                     :slant italic))))
 
    `(org-checkbox
-     ((,class (:background ,darkokai-bg
-                           :foreground ,darkokai-fg
-                           :box (:line-width 1 :style released-button)))
-      (,terminal-class (:background ,terminal-darkokai-bg
-                                    :foreground ,terminal-darkokai-fg
-                                    :box (:line-width 1 :style released-button)))))
+     ((,class (:background ,darkokai-gray
+                           :foreground ,darkokai-violet
+                           :box nil))
+      (,terminal-class (:background ,terminal-darkokai-gray
+                                    :foreground ,terminal-darkokai-violet
+                                    :box nil))))
 
    `(org-code
      ((,class (:foreground ,darkokai-comments))
