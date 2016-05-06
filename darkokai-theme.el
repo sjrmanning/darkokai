@@ -28,6 +28,11 @@
 The theme has to be reloaded after changing anything in this group."
   :group 'faces)
 
+(defcustom darkokai-mode-line-padding 8
+  "Amount of padding around the mode-line text. Set to 1 for normal look."
+  :type 'number
+  :group 'darkokai)
+
 (defcustom darkokai-distinct-fringe-background t
   "Make the fringe background different from the normal background color.
 Also affects 'linum-mode' background."
@@ -462,16 +467,13 @@ Also affects 'linum-mode' background."
                               :underline unspecified
                               :foreground ,s-mode-line-fg
                               :background ,s-mode-line-bg
-                              :box (:line-width 8
+                              :box (:line-width ,darkokai-mode-line-padding
                                                 :color ,s-mode-line-bg
                                                 :style unspecified)))
       (,terminal-class (:inverse-video unspecified
                                        :underline unspecified
                                        :foreground ,terminal-s-mode-line-fg
-                                       :background ,terminal-s-mode-line-bg
-                                       :box (:line-width 8
-                                                         :color ,terminal-s-mode-line-bg
-                                                         :style unspecified)))))
+                                       :background ,terminal-s-mode-line-bg))))
 
    `(mode-line-buffer-id
      ((,class (:foreground ,s-mode-line-buffer-id-fg
@@ -484,16 +486,13 @@ Also affects 'linum-mode' background."
                               :underline unspecified
                               :foreground ,s-mode-line-inactive-fg
                               :background ,s-mode-line-inactive-bg
-                              :box (:line-width 8
+                              :box (:line-width ,darkokai-mode-line-padding
                                                 :color ,s-mode-line-inactive-bg
                                                 :style unspecified)))
       (,terminal-class (:inverse-video unspecified
                                        :underline unspecified
                                        :foreground ,terminal-s-mode-line-inactive-fg
-                                       :background ,terminal-s-mode-line-inactive-bg
-                                       :box (:line-width 1
-                                                         :color ,terminal-s-mode-line-inactive-bc
-                                                         :style unspecified)))))
+                                       :background ,terminal-s-mode-line-inactive-bg))))
 
    `(header-line
      ((,class (:inverse-video unspecified
