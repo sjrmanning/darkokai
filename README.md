@@ -1,12 +1,10 @@
 # Darkokai 🌑
-A dark variant of [oneKelvinSmith’s Monokai port](https://github.com/oneKelvinSmith/monokai-emacs) for Emacs. This came about as I had an ever-growing unorganised list of overrides and tweaks on Monokai which eventually began to emerge into it’s own style.
+A dark variant of [oneKelvinSmith’s Monokai port](https://github.com/oneKelvinSmith/monokai-emacs) for Emacs. This came about as I had an ever-growing unorganised list of overrides and tweaks on Monokai which eventually began to emerge into its own style.
 
 ## Screenshots
 
 ![darkokai-elixir-preview](/../screenshots/elixir-example.png)
-
 ![darkokai-elisp-preview](/../screenshots/elisp-example.png)
-
 ![darkokai-android-preview](/../screenshots/android-example.png)
 
 ## Installation
