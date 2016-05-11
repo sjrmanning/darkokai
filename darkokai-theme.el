@@ -733,9 +733,9 @@ Also affects 'linum-mode' background."
    ;; isearch
    `(isearch
      ((,class (:foreground ,darkokai-cyan-l
-                        :background ,darkokai-cyan-d))
+                           :background ,darkokai-cyan-d))
       (,terminal-class (:foreground ,terminal-darkokai-cyan-l
-                                 :background ,terminal-darkokai-cyan-d))))
+                                    :background ,terminal-darkokai-cyan-d))))
 
    `(isearch-fail
      ((,class (:inherit isearch
@@ -3248,6 +3248,34 @@ Also affects 'linum-mode' background."
      ((,class (:foreground ,darkokai-yellow))
       (,terminal-class (:foreground ,terminal-darkokai-yellow))))
 
+   `(magit-reflog-amend
+     ((,class (:foreground ,darkokai-violet))
+      (,terminal-class (:foreground ,terminal-darkokai-violet))))
+   `(magit-reflog-rebase
+     ((,class (:foreground ,darkokai-violet))
+      (,terminal-class (:foreground ,terminal-darkokai-violet))))
+   `(magit-reflog-checkout
+     ((,class (:foreground ,darkokai-yellow))
+      (,terminal-class (:foreground ,terminal-darkokai-yellow))))
+   `(magit-reflog-reset
+     ((,class (:foreground ,darkokai-red-plain))
+      (,terminal-class (:foreground ,terminal-darkokai-red))))
+   `(magit-reflog-commit
+     ((,class (:foreground ,darkokai-green))
+      (,terminal-class (:foreground ,terminal-darkokai-green))))
+   `(magit-reflog-merge
+     ((,class (:foreground ,darkokai-green))
+      (,terminal-class (:foreground ,terminal-darkokai-green))))
+   `(magit-reflog-cherry-pick
+     ((,class (:foreground ,darkokai-green))
+      (,terminal-class (:foreground ,terminal-darkokai-green))))
+   `(magit-reflog-other
+     ((,class (:foreground ,darkokai-cyan))
+      (,terminal-class (:foreground ,terminal-darkokai-cyan))))
+   `(magit-reflog-remote
+     ((,class (:foreground ,darkokai-cyan))
+      (,terminal-class (:foreground ,terminal-darkokai-cyan))))
+
    ;; man
    `(Man-overstrike
      ((,class (:foreground ,darkokai-blue
@@ -5654,7 +5682,7 @@ Also affects 'linum-mode' background."
   (custom-theme-set-variables
    'darkokai
    `(ansi-color-names-vector [,darkokai-bg ,darkokai-red ,darkokai-green ,darkokai-yellow
-                                          ,darkokai-blue ,darkokai-magenta ,darkokai-cyan ,darkokai-fg])
+                                           ,darkokai-blue ,darkokai-magenta ,darkokai-cyan ,darkokai-fg])
 
    ;; compilation
    `(compilation-message-face 'default)
