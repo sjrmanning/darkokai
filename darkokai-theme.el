@@ -3270,6 +3270,12 @@ Also affects 'linum-mode' background."
       (,terminal-class (:foreground ,terminal-darkokai-yellow
                                     :weight bold))))
 
+   `(monky-diff-title
+     ((,class (:foreground ,darkokai-cyan-l
+                           :background ,darkokai-gray-ld))
+      (,terminal-class (:foreground ,terminal-darkokai-cyan-l
+                                    :background ,terminal-darkokai-gray-d))))
+
    `(monky-diff-add
      ((,class (:foreground ,darkokai-green-plain))
       (,terminal-class (:foreground ,terminal-darkokai-green))))
