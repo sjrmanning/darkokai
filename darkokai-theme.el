@@ -4455,16 +4455,16 @@ Also affects 'linum-mode' background."
       (,terminal-class (:foreground ,terminal-darkokai-green))))
 
    `(rainbow-delimiters-depth-4-face
-     ((,class (:foreground ,darkokai-yellow))
-      (,terminal-class (:foreground ,terminal-darkokai-yellow))))
-
-   `(rainbow-delimiters-depth-5-face
      ((,class (:foreground ,darkokai-orange))
       (,terminal-class (:foreground ,terminal-darkokai-orange))))
 
-   `(rainbow-delimiters-depth-6-face
+   `(rainbow-delimiters-depth-5-face
      ((,class (:foreground ,darkokai-red))
       (,terminal-class (:foreground ,terminal-darkokai-red))))
+
+   `(rainbow-delimiters-depth-6-face
+     ((,class (:foreground ,darkokai-magenta-d))
+      (,terminal-class (:foreground ,terminal-darkokai-magenta))))
 
    `(rainbow-delimiters-depth-7-face
      ((,class (:foreground ,darkokai-violet))
@@ -4477,18 +4477,6 @@ Also affects 'linum-mode' background."
    `(rainbow-delimiters-depth-9-face
      ((,class (:foreground ,darkokai-green))
       (,terminal-class (:foreground ,terminal-darkokai-green))))
-
-   `(rainbow-delimiters-depth-10-face
-     ((,class (:foreground ,darkokai-yellow))
-      (,terminal-class (:foreground ,terminal-darkokai-yellow))))
-
-   `(rainbow-delimiters-depth-11-face
-     ((,class (:foreground ,darkokai-orange))
-      (,terminal-class (:foreground ,terminal-darkokai-orange))))
-
-   `(rainbow-delimiters-depth-12-face
-     ((,class (:foreground ,darkokai-red))
-      (,terminal-class (:foreground ,terminal-darkokai-red))))
 
    `(rainbow-delimiters-unmatched-face
      ((,class (:foreground ,darkokai-fg
