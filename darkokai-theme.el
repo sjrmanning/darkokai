@@ -106,7 +106,7 @@ Also affects 'linum-mode' background."
        (darkokai-gray-ld          "#383c3d")
        (darkokai-gray-d           "#35393b")
        (darkokai-gray-dd          "#2B2F31")
-       (darkokai-gray-l           "#7B7962")
+       (darkokai-gray-l           "#515759")
        (darkokai-green-plain      "#2AD043")
        (darkokai-red-plain        "#FF6159")
        ;; Adaptive colors
