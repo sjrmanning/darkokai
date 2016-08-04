@@ -74,172 +74,176 @@ Also affects 'linum-mode' background."
   :type 'number
   :group 'darkokai)
 
-(let* ((class                    '((class color) (min-colors 257)))
-       ;; Primary colors
-       (darkokai-yellow           "#E6DB74")
-       (darkokai-orange           "#ffac4a")
-       ;; (darkokai-orange           "#FD971F")
-       (darkokai-red              "#ff0066")
-       (darkokai-magenta          "#ff8eff")
-       (darkokai-violet           "#ab7eff")
-       (darkokai-blue             "#06d8ff")
-       (darkokai-cyan             "#53f2dc")
-       (darkokai-green            "#63de5d")
-       (darkokai-gray             "#35393b")
-       ;; Darker and lighter accented colors
-       (darkokai-yellow-d         "#BEB244")
-       (darkokai-yellow-l         "#FFF7A8")
-       (darkokai-orange-d         "#de8f2d")
-       (darkokai-orange-l         "#ffc260")
-       (darkokai-red-d            "#F70057")
-       (darkokai-red-l            "#FE61A0")
-       (darkokai-magenta-d        "#FF61FF")
-       (darkokai-magenta-l        "#FFC4FF")
-       (darkokai-violet-d         "#9257FF")
-       (darkokai-violet-l         "#C9ACFF")
-       (darkokai-blue-d           "#40CAE4")
-       (darkokai-blue-l           "#92E7F7")
-       (darkokai-cyan-d           "#00b2ac")
-       (darkokai-cyan-l           "#BBF7EF")
-       (darkokai-green-d          "#86C30D")
-       (darkokai-green-l          "#BBEF53")
-       (darkokai-gray-ld          "#383c3d")
-       (darkokai-gray-d           "#35393b")
-       (darkokai-gray-dd          "#2B2F31")
-       (darkokai-gray-l           "#515759")
-       (darkokai-green-plain      "#2AD043")
-       (darkokai-red-plain        "#FF6159")
-       ;; Adaptive colors
-       (darkokai-fg               "#f8fbfc")
-       (darkokai-bg               "#242728")
-       (darkokai-highlight-line   "#424748")
-       (darkokai-highlight        "#5D6365")
-       (darkokai-emph             "#ffffff")
-       (darkokai-comments         "#6A6D70")
-       ;; Adaptive higher/lower contrast accented colors
-       (darkokai-fg-hc            "#141414")
-       (darkokai-fg-lc            "#171A0B")
-       ;; High contrast colors
-       (darkokai-yellow-hc        "#FFFACE")
-       (darkokai-yellow-lc        "#9A8F21")
-       (darkokai-orange-hc        "#FFBE74")
-       (darkokai-orange-lc        "#A75B00")
-       (darkokai-red-hc           "#FEB0CC")
-       (darkokai-red-lc           "#F20055")
-       (darkokai-magenta-hc       "#FEC6F9")
-       (darkokai-magenta-lc       "#F309DF")
-       (darkokai-violet-hc        "#F0E7FF")
-       (darkokai-violet-lc        "#7830FC")
-       (darkokai-blue-hc          "#CAF5FD")
-       (darkokai-blue-lc          "#1DB4D0")
-       (darkokai-cyan-hc          "#D3FBF6")
-       (darkokai-cyan-lc          "#4BBEAE")
-       (darkokai-green-hc         "#CCF47C")
-       (darkokai-green-lc         "#63de5d")
-       ;; customize based face properties
-       (s-variable-pitch         (if darkokai-use-variable-pitch
-                                     'variable-pitch 'default))
-       (s-fringe-bg              (if darkokai-distinct-fringe-background
-                                     darkokai-gray-dd darkokai-bg))
-       (s-mode-line-fg           (if darkokai-high-contrast-mode-line
-                                     darkokai-bg darkokai-fg))
-       (s-mode-line-bg           (if darkokai-high-contrast-mode-line
-                                     darkokai-fg darkokai-gray))
-       (s-mode-line-buffer-id-fg (if darkokai-high-contrast-mode-line
-                                     'unspecified darkokai-green-lc))
-       (s-mode-line-inactive-fg  (if darkokai-high-contrast-mode-line
-                                     darkokai-fg darkokai-comments))
-       (s-mode-line-inactive-bg  (if darkokai-high-contrast-mode-line
-                                     darkokai-gray-dd darkokai-bg))
-       (s-mode-line-inactive-bc  (if darkokai-high-contrast-mode-line
-                                     darkokai-fg darkokai-gray))
+(defmacro darkokai-with-color-vars (&rest body)
+  (declare (indent 0))
+  `(let* ((class '((class color) (min-colors 257)))
+          ;; Primary colors
+          (darkokai-yellow           "#E6DB74")
+          (darkokai-orange           "#ffac4a")
+          (darkokai-red              "#ff0066")
+          (darkokai-magenta          "#ff8eff")
+          (darkokai-violet           "#ab7eff")
+          (darkokai-blue             "#06d8ff")
+          (darkokai-cyan             "#53f2dc")
+          (darkokai-green            "#63de5d")
+          (darkokai-gray             "#35393b")
+          ;; Darker and lighter accented colors
+          (darkokai-yellow-d         "#BEB244")
+          (darkokai-yellow-l         "#FFF7A8")
+          (darkokai-orange-d         "#de8f2d")
+          (darkokai-orange-l         "#ffc260")
+          (darkokai-red-d            "#F70057")
+          (darkokai-red-l            "#FE61A0")
+          (darkokai-magenta-d        "#FF61FF")
+          (darkokai-magenta-l        "#FFC4FF")
+          (darkokai-violet-d         "#9257FF")
+          (darkokai-violet-l         "#C9ACFF")
+          (darkokai-blue-d           "#40CAE4")
+          (darkokai-blue-l           "#92E7F7")
+          (darkokai-cyan-d           "#00b2ac")
+          (darkokai-cyan-l           "#BBF7EF")
+          (darkokai-green-d          "#86C30D")
+          (darkokai-green-l          "#BBEF53")
+          (darkokai-gray-ld          "#383c3d")
+          (darkokai-gray-d           "#35393b")
+          (darkokai-gray-dd          "#2B2F31")
+          (darkokai-gray-l           "#515759")
+          (darkokai-green-plain      "#2AD043")
+          (darkokai-red-plain        "#FF6159")
+          ;; Adaptive colors
+          (darkokai-fg               "#f8fbfc")
+          (darkokai-bg               "#242728")
+          (darkokai-highlight-line   "#424748")
+          (darkokai-highlight        "#5D6365")
+          (darkokai-emph             "#ffffff")
+          (darkokai-comments         "#6A6D70")
+          ;; Adaptive higher/lower contrast accented colors
+          (darkokai-fg-hc            "#141414")
+          (darkokai-fg-lc            "#171A0B")
+          ;; High contrast colors
+          (darkokai-yellow-hc        "#FFFACE")
+          (darkokai-yellow-lc        "#9A8F21")
+          (darkokai-orange-hc        "#FFBE74")
+          (darkokai-orange-lc        "#A75B00")
+          (darkokai-red-hc           "#FEB0CC")
+          (darkokai-red-lc           "#F20055")
+          (darkokai-magenta-hc       "#FEC6F9")
+          (darkokai-magenta-lc       "#F309DF")
+          (darkokai-violet-hc        "#F0E7FF")
+          (darkokai-violet-lc        "#7830FC")
+          (darkokai-blue-hc          "#CAF5FD")
+          (darkokai-blue-lc          "#1DB4D0")
+          (darkokai-cyan-hc          "#D3FBF6")
+          (darkokai-cyan-lc          "#4BBEAE")
+          (darkokai-green-hc         "#CCF47C")
+          (darkokai-green-lc         "#63de5d")
+          ;; customize based face properties
+          (s-variable-pitch         (if darkokai-use-variable-pitch
+                                        'variable-pitch 'default))
+          (s-fringe-bg              (if darkokai-distinct-fringe-background
+                                        darkokai-gray-dd darkokai-bg))
+          (s-mode-line-fg           (if darkokai-high-contrast-mode-line
+                                        darkokai-bg darkokai-fg))
+          (s-mode-line-bg           (if darkokai-high-contrast-mode-line
+                                        darkokai-fg darkokai-gray))
+          (s-mode-line-buffer-id-fg (if darkokai-high-contrast-mode-line
+                                        'unspecified darkokai-green-lc))
+          (s-mode-line-inactive-fg  (if darkokai-high-contrast-mode-line
+                                        darkokai-fg darkokai-comments))
+          (s-mode-line-inactive-bg  (if darkokai-high-contrast-mode-line
+                                        darkokai-gray-dd darkokai-bg))
+          (s-mode-line-inactive-bc  (if darkokai-high-contrast-mode-line
+                                        darkokai-fg darkokai-gray))
 
-       ;; powerline
-       (s-powerline-active1-bg   (if darkokai-high-contrast-mode-line
-                                     darkokai-gray-l darkokai-gray))
-       (s-powerline-active2-bg   (if darkokai-high-contrast-mode-line
-                                     darkokai-gray darkokai-gray-l))
-       (s-powerline-inactive1-bg (if darkokai-high-contrast-mode-line
-                                     darkokai-gray darkokai-gray-d))
-       (s-powerline-inactive2-bg (if darkokai-high-contrast-mode-line
-                                     darkokai-bg darkokai-gray))
+          ;; powerline
+          (s-powerline-active1-bg   (if darkokai-high-contrast-mode-line
+                                        darkokai-gray-l darkokai-gray))
+          (s-powerline-active2-bg   (if darkokai-high-contrast-mode-line
+                                        darkokai-gray darkokai-gray-l))
+          (s-powerline-inactive1-bg (if darkokai-high-contrast-mode-line
+                                        darkokai-gray darkokai-gray-d))
+          (s-powerline-inactive2-bg (if darkokai-high-contrast-mode-line
+                                        darkokai-bg darkokai-gray))
 
-       ;; Definitions for terminals that do not support 256 colors
-       (terminal-class                    '((class color) (min-colors 89)))
-       ;; Primary colors
-       (terminal-darkokai-yellow           "#CDC673")
-       (terminal-darkokai-orange           "#FF8C00")
-       (terminal-darkokai-red              "#FF1493")
-       (terminal-darkokai-magenta          "#D700D7")
-       (terminal-darkokai-violet           "#AF87FF")
-       (terminal-darkokai-blue             "#5FD7FF")
-       (terminal-darkokai-cyan             "#5FFFFF")
-       (terminal-darkokai-green            "#87D700")
-       (terminal-darkokai-gray             "#3D3D3D")
-       ;; Darker and lighter accented colors
-       (terminal-darkokai-yellow-d         "#878700")
-       (terminal-darkokai-yellow-l         "#FFFF87")
-       (terminal-darkokai-orange-d         "#AF5F00")
-       (terminal-darkokai-orange-l         "#FFAF5F")
-       (terminal-darkokai-red-d            "#870000")
-       (terminal-darkokai-red-l            "#FF5F87")
-       (terminal-darkokai-magenta-d        "#AF0087")
-       (terminal-darkokai-magenta-l        "#FF87DF")
-       (terminal-darkokai-violet-d         "#5F00AF")
-       (terminal-darkokai-violet-l         "#AF87D7")
-       (terminal-darkokai-blue-d           "#008787")
-       (terminal-darkokai-blue-l           "#87D7FF")
-       (terminal-darkokai-cyan-d           "#5FAFAF")
-       (terminal-darkokai-cyan-l           "#AFFFFF")
-       (terminal-darkokai-green-d          "#5F8700")
-       (terminal-darkokai-green-l          "#AFD700")
-       (terminal-darkokai-gray-d           "#333333")
-       (terminal-darkokai-gray-l           "#707070")
-       ;; Adaptive colors
-       (terminal-darkokai-fg               "#F5F5F5")
-       (terminal-darkokai-bg               "#1B1E1C")
-       (terminal-darkokai-highlight-line   "#474747")
-       (terminal-darkokai-highlight        "#F4A460")
-       (terminal-darkokai-emph             "#FFFAFA")
-       (terminal-darkokai-comments         "#8B8878")
-       ;; Adaptive higher/lower contrast accented colors
-       (terminal-darkokai-fg-hc            "#171A0B")
-       (terminal-darkokai-fg-lc            "#141414")
-       ;; High contrast colors
-       (terminal-darkokai-yellow-hc        terminal-darkokai-yellow-d)
-       (terminal-darkokai-yellow-lc        terminal-darkokai-yellow-l)
-       (terminal-darkokai-orange-hc        terminal-darkokai-orange-d)
-       (terminal-darkokai-orange-lc        terminal-darkokai-orange-l)
-       (terminal-darkokai-red-hc           terminal-darkokai-red-d)
-       (terminal-darkokai-red-lc           terminal-darkokai-red-l)
-       (terminal-darkokai-magenta-hc       terminal-darkokai-magenta-d)
-       (terminal-darkokai-magenta-lc       terminal-darkokai-magenta-l)
-       (terminal-darkokai-violet-hc        terminal-darkokai-violet-d)
-       (terminal-darkokai-violet-lc        terminal-darkokai-violet-l)
-       (terminal-darkokai-blue-hc          terminal-darkokai-blue-d)
-       (terminal-darkokai-blue-lc          terminal-darkokai-blue-l)
-       (terminal-darkokai-cyan-hc          terminal-darkokai-cyan-d)
-       (terminal-darkokai-cyan-lc          terminal-darkokai-cyan-l)
-       (terminal-darkokai-green-hc         terminal-darkokai-green-d)
-       (terminal-darkokai-green-lc         terminal-darkokai-green-l)
-       ;; customize based face properties
-       (terminal-s-variable-pitch         (if darkokai-use-variable-pitch
-                                              'variable-pitch 'default))
-       (terminal-s-fringe-bg              (if darkokai-distinct-fringe-background
-                                              terminal-darkokai-gray terminal-darkokai-bg))
-       (terminal-s-mode-line-fg           (if darkokai-high-contrast-mode-line
-                                              terminal-darkokai-bg terminal-darkokai-fg))
-       (terminal-s-mode-line-bg           (if darkokai-high-contrast-mode-line
-                                              terminal-darkokai-fg terminal-darkokai-gray))
-       (terminal-s-mode-line-buffer-id-fg (if darkokai-high-contrast-mode-line
-                                              'unspecified terminal-darkokai-green))
-       (terminal-s-mode-line-inactive-fg  (if darkokai-high-contrast-mode-line
-                                              terminal-darkokai-fg terminal-darkokai-comments))
-       (terminal-s-mode-line-inactive-bg  (if darkokai-high-contrast-mode-line
-                                              terminal-darkokai-highlight-line terminal-darkokai-bg))
-       (terminal-s-mode-line-inactive-bc  (if darkokai-high-contrast-mode-line
-                                              terminal-darkokai-fg terminal-darkokai-gray)))
+          ;; Definitions for terminals that do not support 256 colors
+          (terminal-class                    '((class color) (min-colors 89)))
+          ;; Primary colors
+          (terminal-darkokai-yellow           "#CDC673")
+          (terminal-darkokai-orange           "#FF8C00")
+          (terminal-darkokai-red              "#FF1493")
+          (terminal-darkokai-magenta          "#D700D7")
+          (terminal-darkokai-violet           "#AF87FF")
+          (terminal-darkokai-blue             "#5FD7FF")
+          (terminal-darkokai-cyan             "#5FFFFF")
+          (terminal-darkokai-green            "#87D700")
+          (terminal-darkokai-gray             "#3D3D3D")
+          ;; Darker and lighter accented colors
+          (terminal-darkokai-yellow-d         "#878700")
+          (terminal-darkokai-yellow-l         "#FFFF87")
+          (terminal-darkokai-orange-d         "#AF5F00")
+          (terminal-darkokai-orange-l         "#FFAF5F")
+          (terminal-darkokai-red-d            "#870000")
+          (terminal-darkokai-red-l            "#FF5F87")
+          (terminal-darkokai-magenta-d        "#AF0087")
+          (terminal-darkokai-magenta-l        "#FF87DF")
+          (terminal-darkokai-violet-d         "#5F00AF")
+          (terminal-darkokai-violet-l         "#AF87D7")
+          (terminal-darkokai-blue-d           "#008787")
+          (terminal-darkokai-blue-l           "#87D7FF")
+          (terminal-darkokai-cyan-d           "#5FAFAF")
+          (terminal-darkokai-cyan-l           "#AFFFFF")
+          (terminal-darkokai-green-d          "#5F8700")
+          (terminal-darkokai-green-l          "#AFD700")
+          (terminal-darkokai-gray-d           "#333333")
+          (terminal-darkokai-gray-l           "#707070")
+          ;; Adaptive colors
+          (terminal-darkokai-fg               "#F5F5F5")
+          (terminal-darkokai-bg               "#1B1E1C")
+          (terminal-darkokai-highlight-line   "#474747")
+          (terminal-darkokai-highlight        "#F4A460")
+          (terminal-darkokai-emph             "#FFFAFA")
+          (terminal-darkokai-comments         "#8B8878")
+          ;; Adaptive higher/lower contrast accented colors
+          (terminal-darkokai-fg-hc            "#171A0B")
+          (terminal-darkokai-fg-lc            "#141414")
+          ;; High contrast colors
+          (terminal-darkokai-yellow-hc        terminal-darkokai-yellow-d)
+          (terminal-darkokai-yellow-lc        terminal-darkokai-yellow-l)
+          (terminal-darkokai-orange-hc        terminal-darkokai-orange-d)
+          (terminal-darkokai-orange-lc        terminal-darkokai-orange-l)
+          (terminal-darkokai-red-hc           terminal-darkokai-red-d)
+          (terminal-darkokai-red-lc           terminal-darkokai-red-l)
+          (terminal-darkokai-magenta-hc       terminal-darkokai-magenta-d)
+          (terminal-darkokai-magenta-lc       terminal-darkokai-magenta-l)
+          (terminal-darkokai-violet-hc        terminal-darkokai-violet-d)
+          (terminal-darkokai-violet-lc        terminal-darkokai-violet-l)
+          (terminal-darkokai-blue-hc          terminal-darkokai-blue-d)
+          (terminal-darkokai-blue-lc          terminal-darkokai-blue-l)
+          (terminal-darkokai-cyan-hc          terminal-darkokai-cyan-d)
+          (terminal-darkokai-cyan-lc          terminal-darkokai-cyan-l)
+          (terminal-darkokai-green-hc         terminal-darkokai-green-d)
+          (terminal-darkokai-green-lc         terminal-darkokai-green-l)
+          ;; customize based face properties
+          (terminal-s-variable-pitch         (if darkokai-use-variable-pitch
+                                                 'variable-pitch 'default))
+          (terminal-s-fringe-bg              (if darkokai-distinct-fringe-background
+                                                 terminal-darkokai-gray terminal-darkokai-bg))
+          (terminal-s-mode-line-fg           (if darkokai-high-contrast-mode-line
+                                                 terminal-darkokai-bg terminal-darkokai-fg))
+          (terminal-s-mode-line-bg           (if darkokai-high-contrast-mode-line
+                                                 terminal-darkokai-fg terminal-darkokai-gray))
+          (terminal-s-mode-line-buffer-id-fg (if darkokai-high-contrast-mode-line
+                                                 'unspecified terminal-darkokai-green))
+          (terminal-s-mode-line-inactive-fg  (if darkokai-high-contrast-mode-line
+                                                 terminal-darkokai-fg terminal-darkokai-comments))
+          (terminal-s-mode-line-inactive-bg  (if darkokai-high-contrast-mode-line
+                                                 terminal-darkokai-highlight-line terminal-darkokai-bg))
+          (terminal-s-mode-line-inactive-bc  (if darkokai-high-contrast-mode-line
+                                                 terminal-darkokai-fg terminal-darkokai-gray))
+          )
+     ,@body))
 
+(darkokai-with-color-vars
   ;; Define faces
   (custom-theme-set-faces
    'darkokai
