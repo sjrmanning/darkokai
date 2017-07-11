@@ -1,7 +1,7 @@
 ;;; darkokai-theme.el --- A darker variant on Monokai.
 
 ;; URL: http://github.com/sjrmanning/darkokai
-;; Version: 0.1.0
+;; Version: 0.1.1
 
 ;;; Commentary:
 ;;
@@ -3077,6 +3077,12 @@ Also affects 'linum-mode' background."
      ((,class (:inherit bold))
       (,terminal-class (:inherit bold))))
 
+   ;; Emacs native line numbers
+   `(line-number
+     ((,class (:foreground ,darkokai-highlight
+                           :background ,s-fringe-bg))
+      (,terminal-class (:foreground ,terminal-darkokai-comments
+                                    :background ,terminal-s-fringe-bg))))
    ;; linum-mode
    `(linum
      ((,class (:foreground ,darkokai-highlight
