@@ -3769,9 +3769,9 @@ Also affects 'linum-mode' background."
                                  :weight bold))))
 
    `(mu4e-replied-face
-     ((,class (:inherit font-lock-builtin-face
+     ((,class (:inherit font-lock-function-name-face
                         :weight normal))
-      (,terminal-class (:inherit font-lock-builtin-face
+      (,terminal-class (:inherit font-lock-function-face
                                  :weight normal))))
 
    `(mu4e-system-face
