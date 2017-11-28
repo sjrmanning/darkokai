@@ -1865,8 +1865,8 @@ Also affects 'linum-mode' background."
       (,terminal-class (:inherit erc-default-face))))
 
    `(erc-input-face
-     ((,class (:foreground ,darkokai-yellow))
-      (,terminal-class (:foreground ,terminal-darkokai-yellow))))
+     ((,class (:inherit erc-default-face))
+      (,terminal-class (:inherit erc-default-face))))
 
    `(erc-keyword-face
      ((,class (:foreground ,darkokai-blue
@@ -1891,8 +1891,8 @@ Also affects 'linum-mode' background."
       (,terminal-class (:inherit erc-default-face))))
 
    `(erc-notice-face
-     ((,class (:foreground ,darkokai-green))
-      (,terminal-class (:foreground ,terminal-darkokai-green))))
+     ((,class (:inherits erc-default-face))
+      (,terminal-class (:inherits erc-default-face))))
 
    `(erc-pal-face
      ((,class (:foreground ,darkokai-orange
@@ -1901,10 +1901,10 @@ Also affects 'linum-mode' background."
                                     :weight bold))))
 
    `(erc-prompt-face
-     ((,class (:foreground ,darkokai-orange
+     ((,class (:foreground ,darkokai-blue
                            :background ,darkokai-bg
                            :weight bold))
-      (,terminal-class (:foreground ,terminal-darkokai-orange
+      (,terminal-class (:foreground ,terminal-darkokai-blue
                                     :background ,terminal-darkokai-bg
                                     :weight bold))))
 
