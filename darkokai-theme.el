@@ -4258,38 +4258,32 @@ Also affects 'linum-mode' background."
                                     :foreground ,terminal-darkokai-blue-hc))))
 
    `(org-habit-clear-future-face
-     ((,class (:background ,darkokai-blue-lc))
-      (,terminal-class (:background ,terminal-darkokai-blue-lc))))
+     ((,class (:background ,darkokai-blue-l))
+      (,terminal-class (:background ,terminal-darkokai-blue-l))))
 
    `(org-habit-ready-face
-     ((,class (:background ,darkokai-green-lc
-                           :foreground ,darkokai-green))
-      (,terminal-class (:background ,terminal-darkokai-green-lc
-                                    :foreground ,terminal-darkokai-green))))
+     ((,class (:background ,darkokai-green-plain))
+      (,terminal-class (:background ,terminal-darkokai-green))))
 
    `(org-habit-ready-future-face
      ((,class (:background ,darkokai-green-lc))
       (,terminal-class (:background ,terminal-darkokai-green-lc))))
 
    `(org-habit-alert-face
-     ((,class (:background ,darkokai-yellow
-                           :foreground ,darkokai-yellow-lc))
-      (,terminal-class (:background ,terminal-darkokai-yellow
-                                    :foreground ,terminal-darkokai-yellow-lc))))
+     ((,class (:background ,darkokai-yellow))
+      (,terminal-class (:background ,terminal-darkokai-yellow))))
 
    `(org-habit-alert-future-face
      ((,class (:background ,darkokai-yellow-lc))
       (,terminal-class (:background ,terminal-darkokai-yellow-lc))))
 
    `(org-habit-overdue-face
-     ((,class (:background ,darkokai-red
-                           :foreground ,darkokai-red-lc))
-      (,terminal-class (:background ,terminal-darkokai-red
-                                    :foreground ,terminal-darkokai-red-lc))))
+     ((,class (:background ,darkokai-red-plain))
+      (,terminal-class (:background ,terminal-darkokai-red))))
 
    `(org-habit-overdue-future-face
-     ((,class (:background ,darkokai-red-lc))
-      (,terminal-class (:background ,terminal-darkokai-red-lc))))
+     ((,class (:background ,darkokai-red-hc))
+      (,terminal-class (:background ,terminal-darkokai-red-hc))))
 
    ;; latest additions
    `(org-agenda-dimmed-todo-face
