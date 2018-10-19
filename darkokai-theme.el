@@ -66,6 +66,11 @@ Also affects 'linum-mode' background."
   :type 'boolean
   :group 'darkokai)
 
+(defcustom darkokai-blue-tint nil
+  "Use a blue-ish tinted background rather than the flatter black."
+  :type 'boolean
+  :group 'darkokai)
+
 (defcustom darkokai-high-contrast-mode-line nil
   "Make the active/inactive mode line stand out more."
   :type 'boolean
@@ -109,6 +114,13 @@ Also affects 'linum-mode' background."
           (darkokai-cyan             "#53f2dc")
           (darkokai-green            "#63de5d")
           (darkokai-gray             "#35393b")
+          ;; Blue tints
+          (darkokai-bg-blue          "#1E1F28")
+          (darkokai-fringe-blue      "#2a2b38")
+          (darkokai-pl-ld            "#38394a")
+          (darkokai-pl-d             "#323342")
+          (darkokai-pl-dd            "#292a36")
+          (darkokai-pl-l             "#424458")
           ;; Darker and lighter accented colors
           (darkokai-yellow-d         "#BEB244")
           (darkokai-yellow-l         "#FFF7A8")
@@ -160,32 +172,58 @@ Also affects 'linum-mode' background."
           (darkokai-green-hc         "#CCF47C")
           (darkokai-green-lc         "#63de5d")
           ;; customize based face properties
+          (s-primary-bg             (if darkokai-blue-tint
+                                        darkokai-bg-blue darkokai-bg))
           (s-variable-pitch         (if darkokai-use-variable-pitch
                                         'variable-pitch 'default))
+          (s-distinct-fringe        (if darkokai-blue-tint
+                                        darkokai-fringe-blue darkokai-gray-dd))
           (s-fringe-bg              (if darkokai-distinct-fringe-background
-                                        darkokai-gray-dd darkokai-bg))
+                                        s-distinct-fringe darkokai-bg))
           (s-mode-line-fg           (if darkokai-high-contrast-mode-line
                                         darkokai-bg darkokai-fg))
           (s-mode-line-bg           (if darkokai-high-contrast-mode-line
-                                        darkokai-fg darkokai-gray))
+                                        darkokai-fg (if darkokai-blue-tint
+                                                        darkokai-pl-d darkokai-gray)))
           (s-mode-line-buffer-id-fg (if darkokai-high-contrast-mode-line
                                         'unspecified darkokai-green-lc))
           (s-mode-line-inactive-fg  (if darkokai-high-contrast-mode-line
                                         darkokai-fg darkokai-comments))
           (s-mode-line-inactive-bg  (if darkokai-high-contrast-mode-line
-                                        darkokai-gray-dd darkokai-bg))
+                                        darkokai-gray-dd (if darkokai-blue-tint
+                                                             darkokai-pl-dd darkokai-bg)))
           (s-mode-line-inactive-bc  (if darkokai-high-contrast-mode-line
                                         darkokai-fg darkokai-gray))
 
-          ;; powerline
-          (s-powerline-active1-bg   (if darkokai-high-contrast-mode-line
-                                        darkokai-gray-l darkokai-gray))
-          (s-powerline-active2-bg   (if darkokai-high-contrast-mode-line
-                                        darkokai-gray darkokai-gray-l))
-          (s-powerline-inactive1-bg (if darkokai-high-contrast-mode-line
-                                        darkokai-gray darkokai-gray-d))
-          (s-powerline-inactive2-bg (if darkokai-high-contrast-mode-line
-                                        darkokai-bg darkokai-gray))
+          ;; powerline default
+          (s-powerline-default-active1-bg   (if darkokai-high-contrast-mode-line
+                                                darkokai-gray-l darkokai-gray))
+          (s-powerline-default-active2-bg   (if darkokai-high-contrast-mode-line
+                                                darkokai-gray darkokai-gray-l))
+          (s-powerline-default-inactive1-bg (if darkokai-high-contrast-mode-line
+                                                darkokai-gray darkokai-gray-d))
+          (s-powerline-default-inactive2-bg (if darkokai-high-contrast-mode-line
+                                                darkokai-bg darkokai-gray))
+
+          ;; powerline blue versions
+          (s-powerline-active1-blue-bg   (if darkokai-high-contrast-mode-line
+                                             darkokai-pl-l darkokai-pl-d))
+          (s-powerline-active2-blue-bg   (if darkokai-high-contrast-mode-line
+                                             darkokai-pl-d darkokai-pl-l))
+          (s-powerline-inactive1-blue-bg (if darkokai-high-contrast-mode-line
+                                             darkokai-pl-d darkokai-pl-d))
+          (s-powerline-inactive2-blue-bg (if darkokai-high-contrast-mode-line
+                                             darkokai-bg darkokai-pl-d))
+
+          ;; powerline conditional
+          (s-powerline-active1-bg   (if darkokai-blue-tint
+                                        s-powerline-active1-blue-bg s-powerline-default-active1-bg))
+          (s-powerline-active2-bg   (if darkokai-blue-tint
+                                        s-powerline-active2-blue-bg s-powerline-default-active2-bg))
+          (s-powerline-inactive1-bg   (if darkokai-blue-tint
+                                          s-powerline-inactive1-blue-bg s-powerline-default-inactive1-bg))
+          (s-powerline-inactive2-bg   (if darkokai-blue-tint
+                                          s-powerline-inactive2-blue-bg s-powerline-default-inactive2-bg))
 
           ;; Definitions for terminals that do not support 256 colors
           (terminal-class                    '((class color) (min-colors 89)))
@@ -220,7 +258,7 @@ Also affects 'linum-mode' background."
           (terminal-darkokai-gray-l           "#707070")
           ;; Adaptive colors
           (terminal-darkokai-fg               "#F5F5F5")
-          (terminal-darkokai-bg               "#1B1E1C")
+          (terminal-darkokai-bg               nil)
           (terminal-darkokai-highlight-line   "#474747")
           (terminal-darkokai-highlight        "#F4A460")
           (terminal-darkokai-emph             "#FFFAFA")
@@ -359,7 +397,7 @@ Also affects 'linum-mode' background."
 
    `(default
       ((,class (:foreground ,darkokai-fg
-                            :background ,darkokai-bg))
+                            :background ,s-primary-bg))
        (,terminal-class (:foreground ,terminal-darkokai-fg
                                      :background ,terminal-darkokai-bg))))
 
