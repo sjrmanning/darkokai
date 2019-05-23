@@ -2979,6 +2979,47 @@ Also affects 'linum-mode' background."
      ((,class (:foreground ,darkokai-cyan))
       (,terminal-class (:foreground ,terminal-darkokai-cyan))))
 
+   ;; ivy
+   `(ivy-subdir
+     ((,class (:foreground ,darkokai-blue))
+      (,terminal-class (:foreground ,terminal-darkokai-blue))))
+
+   `(ivy-minibuffer-match-face-1
+     ((,class (:foreground ,darkokai-violet
+                           :underline t))
+      (,terminal-class (:foreground ,terminal-darkokai-violet
+                                    :underline t))))
+
+   `(ivy-minibuffer-match-face-2
+     ((,class (:foreground ,darkokai-violet-l
+                           :underline t))
+      (,terminal-class (:foreground ,terminal-darkokai-violet-l
+                                    :underline t))))
+
+   `(ivy-minibuffer-match-face-3
+     ((,class (:foreground ,darkokai-magenta-l
+                           :underline t))
+      (,terminal-class (:foreground ,terminal-darkokai-magenta-l
+                                    :underline t))))
+
+   `(ivy-minibuffer-match-face-4
+     ((,class (:foreground ,darkokai-cyan-l
+                           :underline t))
+      (,terminal-class (:foreground ,terminal-darkokai-cyan-l
+                                    :underline t))))
+
+   `(ivy-match-required-face
+     ((,class (:foreground ,darkokai-red-plain))
+      (,terminal-class (:foreground ,darkokai-red-plain))))
+
+   `(ivy-current-match
+     ((,class (:background ,darkokai-cyan-d
+                           :foreground ,darkokai-cyan-l))
+      (,terminal-class (:background ,terminal-darkokai-cyan-d
+                                    :foreground ,terminal-darkokai-cyan-l))))
+
+   ;; jabber
+
    `(jabber-activity-face
      ((,class (:weight bold
                        :foreground ,darkokai-red))
