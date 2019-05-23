@@ -3014,9 +3014,11 @@ Also affects 'linum-mode' background."
 
    `(ivy-current-match
      ((,class (:background ,darkokai-cyan-d
-                           :foreground ,darkokai-cyan-l))
+                           :foreground ,darkokai-cyan-l
+                           :weight bold))
       (,terminal-class (:background ,terminal-darkokai-cyan-d
-                                    :foreground ,terminal-darkokai-cyan-l))))
+                                    :foreground ,terminal-darkokai-cyan-l
+                                    :weight bold))))
 
    ;; jabber
 
