@@ -115,8 +115,8 @@ Also affects 'linum-mode' background."
           (darkokai-green            "#63de5d")
           (darkokai-gray             "#35393b")
           ;; Blue tints
-          (darkokai-bg-blue          "#1E1F28")
-          (darkokai-fringe-blue      "#2a2b38")
+          (darkokai-bg-blue          "#282a36")
+          (darkokai-fringe-blue      "#323342")
           (darkokai-pl-ld            "#38394a")
           (darkokai-pl-d             "#323342")
           (darkokai-pl-dd            "#292a36")
