@@ -3241,6 +3241,10 @@ Also affects 'linum-mode' background."
       (,terminal-class (:foreground ,terminal-darkokai-red
                                     :background ,terminal-darkokai-highlight-line))))
 
+   `(magit-section-highlight
+     ((,class (:background ,darkokai-highlight-line))
+      (,terminal-class (:background ,terminal-darkokai-highlight-line))))
+
    `(magit-section-title
      ((,class (:foreground ,darkokai-yellow
                            :weight bold))
