@@ -2985,10 +2985,10 @@ Also affects 'linum-mode' background."
       (,terminal-class (:foreground ,terminal-darkokai-blue))))
 
    `(ivy-minibuffer-match-face-1
-     ((,class (:foreground ,darkokai-violet
-                           :underline t))
-      (,terminal-class (:foreground ,terminal-darkokai-violet
-                                    :underline t))))
+     ((,class (:foreground ,darkokai-comments
+                           :underline nil))
+      (,terminal-class (:foreground ,terminal-darkokai-comments
+                                    :underline nil))))
 
    `(ivy-minibuffer-match-face-2
      ((,class (:foreground ,darkokai-violet-l
