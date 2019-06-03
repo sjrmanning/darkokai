@@ -147,7 +147,7 @@ Also affects 'linum-mode' background."
           ;; Adaptive colors
           (darkokai-fg               "#f8fbfc")
           (darkokai-bg               "#242728")
-          (darkokai-highlight-line   "#424748")
+          (darkokai-highlight-line   "#323342")
           (darkokai-highlight        "#5D6365")
           (darkokai-emph             "#ffffff")
           (darkokai-comments         "#6A6D70")
