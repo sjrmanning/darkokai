@@ -3019,6 +3019,9 @@ Also affects 'linum-mode' background."
       (,terminal-class (:background ,terminal-darkokai-cyan-d
                                     :foreground ,terminal-darkokai-cyan-l
                                     :weight bold))))
+   `(ivy-highlight-face
+     ((,class (:background ,nil))
+      (,terminal-class (:background ,nil))))
 
    ;; jabber
 
