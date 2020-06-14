@@ -3020,8 +3020,8 @@ Also affects 'linum-mode' background."
                                     :foreground ,terminal-darkokai-cyan-l
                                     :weight bold))))
    `(ivy-highlight-face
-     ((,class (:background ,nil))
-      (,terminal-class (:background ,nil))))
+     ((,class (:background ,darkokai-gray))
+      (,terminal-class (:background ,darkokai-gray))))
 
    ;; jabber
 
