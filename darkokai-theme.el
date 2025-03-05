@@ -533,7 +533,7 @@ Also affects 'linum-mode' background."
                               :background ,s-mode-line-bg
                               :box (:line-width ,darkokai-mode-line-padding
                                                 :color ,s-mode-line-bg
-                                                :style unspecified)))
+                                                :style nil)))
       (,terminal-class (:inverse-video unspecified
                                        :underline unspecified
                                        :foreground ,terminal-s-mode-line-fg
@@ -552,7 +552,7 @@ Also affects 'linum-mode' background."
                               :background ,s-mode-line-inactive-bg
                               :box (:line-width ,darkokai-mode-line-padding
                                                 :color ,s-mode-line-inactive-bg
-                                                :style unspecified)))
+                                                :style nil)))
       (,terminal-class (:inverse-video unspecified
                                        :underline unspecified
                                        :foreground ,terminal-s-mode-line-inactive-fg
@@ -565,14 +565,14 @@ Also affects 'linum-mode' background."
                               :background ,darkokai-highlight-line
                               :box (:line-width 1
                                                 :color ,darkokai-gray
-                                                :style unspecified)))
+                                                :style nil)))
       (,terminal-class (:inverse-video unspecified
                                        :underline unspecified
                                        :foreground ,terminal-darkokai-emph
                                        :background ,terminal-darkokai-highlight-line
                                        :box (:line-width 1
                                                          :color ,terminal-darkokai-gray
-                                                         :style unspecified)))))
+                                                         :style nil)))))
 
    ;; cua
    `(cua-global-mark
