@@ -1,3 +1,4 @@
+;;; -*- lexical-binding: t -*-
 ;;; darkokai-theme.el --- A darker variant on Monokai.
 
 ;; URL: http://github.com/sjrmanning/darkokai
@@ -57,7 +58,7 @@ The theme has to be reloaded after changing anything in this group."
 
 (defcustom darkokai-distinct-fringe-background t
   "Make the fringe background different from the normal background color.
-Also affects 'linum-mode' background."
+Also affects \\='linum-mode' background."
   :type 'boolean
   :group 'darkokai)
 
@@ -117,15 +118,15 @@ Also affects 'linum-mode' background."
           ;; Blue tints
           (darkokai-bg-blue          "#282a36")
           (darkokai-fringe-blue      "#323342")
-          (darkokai-pl-ld            "#38394a")
+          (_darkokai-pl-ld           "#38394a")
           (darkokai-pl-d             "#323342")
           (darkokai-pl-dd            "#292a36")
           (darkokai-pl-l             "#424458")
           ;; Darker and lighter accented colors
           (darkokai-yellow-d         "#BEB244")
-          (darkokai-yellow-l         "#FFF7A8")
+          (_darkokai-yellow-l        "#FFF7A8")
           (darkokai-orange-d         "#de8f2d")
-          (darkokai-orange-l         "#ffc260")
+          (_darkokai-orange-l        "#ffc260")
           (darkokai-red-d            "#F70057")
           (darkokai-red-l            "#FE61A0")
           (darkokai-magenta-d        "#FF61FF")
@@ -192,7 +193,7 @@ Also affects 'linum-mode' background."
           (s-mode-line-inactive-bg  (if darkokai-high-contrast-mode-line
                                         darkokai-gray-dd (if darkokai-blue-tint
                                                              darkokai-pl-dd darkokai-bg)))
-          (s-mode-line-inactive-bc  (if darkokai-high-contrast-mode-line
+          (_s-mode-line-inactive-bc (if darkokai-high-contrast-mode-line
                                         darkokai-fg darkokai-gray))
 
           ;; powerline default
@@ -298,7 +299,7 @@ Also affects 'linum-mode' background."
                                                  terminal-darkokai-fg terminal-darkokai-comments))
           (terminal-s-mode-line-inactive-bg  (if darkokai-high-contrast-mode-line
                                                  terminal-darkokai-highlight-line terminal-darkokai-bg))
-          (terminal-s-mode-line-inactive-bc  (if darkokai-high-contrast-mode-line
+          (_terminal-s-mode-line-inactive-bc (if darkokai-high-contrast-mode-line
                                                  terminal-darkokai-fg terminal-darkokai-gray))
           )
      ,@body))
@@ -321,7 +322,7 @@ Also affects 'linum-mode' background."
 
    `(font-lock-comment-face
      ((,class (:foreground ,darkokai-comments
-                           :background nil))
+                           :background unspecified))
       (,terminal-class (:foreground ,terminal-darkokai-comments))))
 
    `(font-lock-constant-face
@@ -1147,10 +1148,10 @@ Also affects 'linum-mode' background."
                                     :weight bold))))
 
    `(cfw:face-holiday
-     ((,class (:background nil
+     ((,class (:background unspecified
                            :foreground ,darkokai-red
                            :weight bold))
-      (,terminal-class (:background nil
+      (,terminal-class (:background unspecified
                                     :foreground ,terminal-darkokai-red
                                     :weight bold))))
 
@@ -1191,10 +1192,10 @@ Also affects 'linum-mode' background."
    `(cfw:face-today
      ((,class (:weight bold
                        :background ,darkokai-highlight-line
-                       :foreground nil))
+                       :foreground unspecified))
       (,terminal-class (:weight bold
                                 :background ,terminal-darkokai-highlight-line
-                                :foreground nil))))
+                                :foreground unspecified))))
 
    `(cfw:face-today-title
      ((,class (:background ,darkokai-yellow-lc
@@ -1229,10 +1230,10 @@ Also affects 'linum-mode' background."
    ;; cider
    `(cider-enlightened
      ((,class (:foreground ,darkokai-yellow
-                           :background nil
+                           :background unspecified
                            :box (:color ,darkokai-yellow :line-width -1 :style nil)))
       (,terminal-class (:foreground ,terminal-darkokai-yellow
-                                    :background nil
+                                    :background unspecified
                                     :box (:color ,terminal-darkokai-yellow :line-width -1 :style nil))) ))
 
    `(cider-enlightened-local
@@ -1241,18 +1242,18 @@ Also affects 'linum-mode' background."
 
    `(cider-instrumented-face
      ((,class (:foreground ,darkokai-violet
-                           :background nil
+                           :background unspecified
                            :box (:color ,darkokai-violet :line-width -1 :style nil)))
       (,terminal-class (:foreground ,terminal-darkokai-violet
-                                    :background nil
+                                    :background unspecified
                                     :box (:color ,terminal-darkokai-violet :line-width -1 :style nil)))))
 
    `(cider-result-overlay-face
      ((,class (:foreground ,darkokai-blue
-                           :background nil
+                           :background unspecified
                            :box (:color ,darkokai-blue :line-width -1 :style nil)))
       (,terminal-class (:foreground ,terminal-darkokai-blue
-                                    :background nil
+                                    :background unspecified
                                     :box (:color ,terminal-darkokai-blue :line-width -1 :style nil)))))
 
    `(cider-test-error-face
