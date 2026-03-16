@@ -1,2 +1,3 @@
 # Ignore PSD used to brainstorm colours.
 themedesign.psd
+*.elc
